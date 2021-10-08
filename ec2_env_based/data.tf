@@ -1,12 +1,12 @@
 data "aws_ami" "example" {
   
   most_recent      = true
-  name_regex       = "^ubuntu/images/hvm-ssd/ubuntu-focal-\\d{3}"
+  name_regex       = "^ubuntu/images/hvm-ssd/ubuntu-focal*"
   owners=["099720109477"] 
 
   filter {
     name   = "name"
-    values = ["ami-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-*"]
   }
 
   filter {
